@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en" target-language="ru" original="../Layout.resx">
+    <body>
+      <trans-unit id="MainLayoutAspire">
+        <source>.NET Aspire</source>
+        <target state="translated">.NET Aspire</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MainLayoutAspireDashboardHelpLink">
+        <source>Help</source>
+        <target state="translated">Справка</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MainLayoutAspireRepoLink">
+        <source>.NET Aspire repo</source>
+        <target state="translated">Репозиторий .NET Aspire</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MainLayoutLaunchSettings">
+        <source>Launch settings</source>
+        <target state="translated">Параметры запуска</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MainLayoutSettingsDialogClose">
+        <source>Close</source>
+        <target state="translated">Закрыть</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MainLayoutSettingsDialogTitle">
+        <source>Settings</source>
+        <target state="translated">Параметры</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MainLayoutUnhandledErrorMessage">
+        <source>An unhandled error has occurred.</source>
+        <target state="translated">Возникла необрабатываемая ошибка.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MainLayoutUnhandledErrorReload">
+        <source>Reload</source>
+        <target state="translated">Перезагрузить</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MessageTelemetryBody">
+        <source>Untrusted apps can send telemetry to the dashboard.</source>
+        <target state="translated">Недоверенные приложения могут отправлять телеметрию на панель мониторинга.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MessageTelemetryLink">
+        <source>More information</source>
+        <target state="translated">Дополнительные сведения</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MessageTelemetryTitle">
+        <source>Telemetry endpoint is unsecured</source>
+        <target state="translated">Конечная точка телеметрии не защищена</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="NavMenuConsoleLogsTab">
+        <source>Console</source>
+        <target state="translated">Консоль</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="NavMenuMetricsTab">
+        <source>Metrics</source>
+        <target state="translated">Метрики</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="NavMenuMonitoringTab">
+        <source>Monitoring</source>
+        <target state="translated">Мониторинг</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="NavMenuResourcesTab">
+        <source>Resources</source>
+        <target state="translated">Ресурсы</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="NavMenuStructuredLogsTab">
+        <source>Structured</source>
+        <target state="translated">Структурированные</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="NavMenuTracesTab">
+        <source>Traces</source>
+        <target state="translated">Трассировки</target>
+        <note />
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
