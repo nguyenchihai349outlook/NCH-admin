@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en" target-language="zh-Hant" original="../Layout.resx">
+    <body>
+      <trans-unit id="MainLayoutAspire">
+        <source>.NET Aspire</source>
+        <target state="translated">.NET Aspire</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MainLayoutAspireDashboardHelpLink">
+        <source>Help</source>
+        <target state="translated">說明</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MainLayoutAspireRepoLink">
+        <source>.NET Aspire repo</source>
+        <target state="translated">.NET Aspire 存放庫</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MainLayoutLaunchSettings">
+        <source>Launch settings</source>
+        <target state="translated">啟動設定</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MainLayoutSettingsDialogClose">
+        <source>Close</source>
+        <target state="translated">關閉</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MainLayoutSettingsDialogTitle">
+        <source>Settings</source>
+        <target state="translated">設定</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MainLayoutUnhandledErrorMessage">
+        <source>An unhandled error has occurred.</source>
+        <target state="translated">發生未處理的錯誤。</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MainLayoutUnhandledErrorReload">
+        <source>Reload</source>
+        <target state="translated">重新載入</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MessageTelemetryBody">
+        <source>Untrusted apps can send telemetry to the dashboard.</source>
+        <target state="new">Untrusted apps can send telemetry to the dashboard.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MessageTelemetryLink">
+        <source>More information</source>
+        <target state="new">More information</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MessageTelemetryTitle">
+        <source>Telemetry endpoint is unsecured</source>
+        <target state="new">Telemetry endpoint is unsecured</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="NavMenuConsoleLogsTab">
+        <source>Console</source>
+        <target state="translated">主控台</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="NavMenuMetricsTab">
+        <source>Metrics</source>
+        <target state="translated">計量</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="NavMenuMonitoringTab">
+        <source>Monitoring</source>
+        <target state="translated">監視</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="NavMenuResourcesTab">
+        <source>Resources</source>
+        <target state="translated">資源</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="NavMenuStructuredLogsTab">
+        <source>Structured</source>
+        <target state="translated">結構化</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="NavMenuTracesTab">
+        <source>Traces</source>
+        <target state="translated">追蹤</target>
+        <note />
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
