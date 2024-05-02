@@ -1,0 +1,33 @@
+﻿<div class="summary-details-container">
+    <FluentSplitter Orientation="@Orientation" Collapsed="@(!ShowDetails)" OnResized="HandleSplitterResize" Panel1Size="@_panel1Size" Panel2Size="@_panel2Size">
+        <Panel1>
+            <div class="summary-container">
+                @Summary
+            </div>
+        </Panel1>
+        <Panel2>
+            <div class="details-container">
+                <FluentHeader Style="height: auto;">
+                    @if (DetailsTitle is not null)
+                    {
+                        @DetailsTitle
+                    }
+                    else if (DetailsTitleTemplate is not null)
+                    {
+                        @DetailsTitleTemplate
+                    }
+                    <div class="header-right">
+                        <FluentButton Appearance="Appearance.Stealth"
+                                      IconEnd="@(Orientation == Orientation.Horizontal ? _splitHorizontalIcon : _splitVerticalIcon)"
+                                      OnClick="HandleToggleOrientation"
+                                      Title="@(Orientation == Orientation.Horizontal ? "Split Horizontal" : "Split Vertical")"
+                                      aria-label="@(Orientation == Orientation.Horizontal ? "Split Horizontal" : "Split Vertical")" />
+                        <FluentButton Appearance="Appearance.Stealth" IconEnd="@(new Icons.Regular.Size16.Dismiss())"
+                                      OnClick="HandleDismissAsync" Title="Close" aria-label="Close" />
+                    </div>
+                </FluentHeader>
+                @Details
+            </div>
+        </Panel2>
+    </FluentSplitter>
+</div>
