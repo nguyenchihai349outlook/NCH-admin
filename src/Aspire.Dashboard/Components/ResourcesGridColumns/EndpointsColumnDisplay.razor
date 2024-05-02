@@ -1,0 +1,80 @@
+﻿@using Aspire.Dashboard.Model
+@namespace Aspire.Dashboard.Components
+
+@if (DisplayedEndpoints.Count == 1)
+{
+    var displayedEndpoint = DisplayedEndpoints[0];
+    if (displayedEndpoint.Url != null)
+    {
+        <a href="@displayedEndpoint.Url" target="_blank">@displayedEndpoint.Text</a>
+    }
+    else
+    {
+        @displayedEndpoint.Text
+    }
+}
+else
+{
+    <FluentOverflow Class="endpoint-overflow">
+        <ChildContent>
+            @for (var i = 0; i < DisplayedEndpoints.Count; i++)
+            {
+                var displayedEndpoint = DisplayedEndpoints[i];
+                var isLast = i == DisplayedEndpoints.Count - 1;
+
+                <FluentOverflowItem Data="displayedEndpoint">
+                    @if (displayedEndpoint.Url != null)
+                    {
+                        <a href="@displayedEndpoint.Url" target="_blank">@displayedEndpoint.Text</a>
+                    }
+                    else
+                    {
+                        @displayedEndpoint.Text
+                    }
+                    @if (!isLast)
+                    {
+                        <span>,</span>
+                    }
+                </FluentOverflowItem>
+            }
+        </ChildContent>
+        <MoreButtonTemplate Context="overflow">
+            <FluentButton Appearance="Appearance.Accent" OnClick="() => _popoverVisible = !_popoverVisible" Class="endpoint-button">
+                @($"+{overflow.ItemsOverflow.Count()}")
+            </FluentButton>
+        </MoreButtonTemplate>
+        <OverflowTemplate Context="overflow">
+            @{
+                var items = overflow.ItemsOverflow.ToList();
+            }
+            <FluentPopover AnchorId="@overflow.IdMoreButton" @bind-Open="_popoverVisible" VerticalThreshold="200" AutoFocus="false">
+                <Header>
+                    Endpoints
+                </Header>
+                <Body>
+                    <div style="max-height:400px; overflow-x:hidden; overflow-y: auto; padding:5px 10px;">
+                        @foreach (var item in items)
+                        {
+                            var d = (DisplayedEndpoint)item.Data!;
+                            <div style="margin-bottom: 4px;">
+                                @if (d.Url != null)
+                                {
+                                    <a href="@d.Url" target="_blank">@d.Text</a>
+                                }
+                                else
+                                {
+                                    @d.Text
+                                }
+                            </div>
+                        }
+                    </div>
+                </Body>
+            </FluentPopover>
+        </OverflowTemplate>
+    </FluentOverflow>
+}
+
+@if (!string.IsNullOrEmpty(AdditionalMessage))
+{
+    <div>@AdditionalMessage</div>
+}
