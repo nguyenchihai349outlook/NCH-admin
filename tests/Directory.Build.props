@@ -1,0 +1,27 @@
+<Project>
+
+  <Import Project="..\Directory.Build.props" />
+
+  <PropertyGroup>
+    <!--
+      Test projects don't need XML docs
+      CS1573: Parameter 'parameter' has no matching param tag in the XML comment for 'parameter' (but other parameters do)
+      CS1591: Missing XML comment for publicly visible type or member 'Type_or_Member'
+      CS1712: Type parameter 'type_parameter' has no matching typeparam tag in the XML comment on 'type_or_member' (but other type parameters do)
+    -->
+    <NoWarn>$(NoWarn);1573;1591;1712</NoWarn>
+
+    <IsHelixOnlyTestProject Condition="'$(IsHelixOnlyTestProject)' == ''">false</IsHelixOnlyTestProject>
+    <IsNonHelixOnlyTestProject Condition="'$(IsNonHelixOnlyTestProject)' == ''">false</IsNonHelixOnlyTestProject>
+    <DeployRunSettingsFile Condition="'$(DeployRunSettingsFile)' == ''">true</DeployRunSettingsFile>
+
+    <!-- FIXME: add back CI condition -->
+    <RunTestOnHelix Condition="'$(IsTestSupportProject)' != 'true' and
+                                  ('$(IsHelixOnlyTestProject)' == 'true' or
+                                    ('$(IsNonHelixOnlyTestProject)' != 'true' and '$(DefaultToRunningTestsOnHelix)' == 'true'))">true</RunTestOnHelix>
+    <!-- skip for local run -->
+    <!-- FIXME: check for testsupportproject too? -->
+    <SkipTests Condition="'$(SkipTests)' == '' and '$(RunTestOnHelix)' == 'true'">true</SkipTests>
+  </PropertyGroup>
+
+</Project>
