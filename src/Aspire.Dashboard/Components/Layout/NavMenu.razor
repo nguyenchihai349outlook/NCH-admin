@@ -1,0 +1,36 @@
+﻿@using Aspire.Dashboard.Model
+@using Aspire.Dashboard.Resources
+@inject IStringLocalizer<Layout> Loc
+@inject IDashboardClient DashboardClient
+
+<FluentAppBar>
+    @if (DashboardClient.IsEnabled)
+    {
+        <FluentAppBarItem
+            Href="/"
+            Match="NavLinkMatch.All"
+            Icon="ResourcesIcon()"
+            SecondaryIcon="ResourcesIcon(secondary: true)"
+            Text="@Loc[nameof(Layout.NavMenuResourcesTab)]" />
+        <FluentAppBarItem
+            Href="/ConsoleLogs"
+            Icon="ConsoleLogsIcon()"
+            SecondaryIcon="ConsoleLogsIcon(secondary: true)"
+            Text="@Loc[nameof(Layout.NavMenuConsoleLogsTab)]" />
+    }
+    <FluentAppBarItem
+        Href="/StructuredLogs"
+        Icon="StructuredLogsIcon()"
+        SecondaryIcon="StructuredLogsIcon(secondary: true)"
+        Text="@Loc[nameof(Layout.NavMenuStructuredLogsTab)]" />
+    <FluentAppBarItem
+        Href="/Traces"
+        Icon="TracesIcon()"
+        SecondaryIcon="TracesIcon(secondary: true)"
+        Text="@Loc[nameof(Layout.NavMenuTracesTab)]" />
+    <FluentAppBarItem
+        Href="/Metrics"
+        Icon="MetricsIcon()"
+        SecondaryIcon="MetricsIcon(secondary: true)"
+        Text="@Loc[nameof(Layout.NavMenuMetricsTab)]" />
+</FluentAppBar>

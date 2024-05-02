@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>$(NetCurrent)</TargetFramework>
+
+    <!-- Temporary - just to have at least one helix only project for now -->
+    <RunTestsOnHelix>true</RunTestsOnHelix>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Aspire.Dashboard\Aspire.Dashboard.csproj" />
+  </ItemGroup>
+
+</Project>
