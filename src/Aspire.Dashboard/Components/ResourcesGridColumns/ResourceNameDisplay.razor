@@ -1,0 +1,19 @@
+﻿@namespace Aspire.Dashboard.Components
+
+@using Aspire.Dashboard.Model
+@using Aspire.Dashboard.Otlp.Model
+@using Aspire.Dashboard.Resources
+@inject IStringLocalizer<Columns> Loc
+
+<span title="@FormatName(Resource)"><FluentHighlighter HighlightedText="@FilterText" Text="@FormatName(Resource)"/></span>
+
+@code {
+    [Parameter, EditorRequired]
+    public required ResourceViewModel Resource { get; set; }
+
+    [Parameter, EditorRequired]
+    public required Func<ResourceViewModel, string> FormatName { get; set; }
+
+    [Parameter, EditorRequired]
+    public required string FilterText { get; set; }
+}
