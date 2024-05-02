@@ -1,0 +1,62 @@
+{
+  "resources": {
+    "servicea": {
+      "type": "project.v1",
+      "path": "..\\ServiceA\\DaprServiceA.csproj",
+      "env": {}
+    },
+    "serviceb": {
+      "type": "project.v1",
+      "path": "..\\ServiceB\\DaprServiceB.csproj",
+      "env": {}
+    },
+    "service-a": {
+      "type": "executable.v1",
+      "env": {
+        "OTEL_EXPORTER_OTLP_INSECURE": "true",
+        "OTEL_EXPORTER_OTLP_PROTOCOL": "grpc"
+      },
+      "bindings": {
+        "grpc": {
+          "scheme": "tcp",
+          "protocol": "tcp",
+          "transport": "tcp"
+        },
+        "http": {
+          "scheme": "tcp",
+          "protocol": "tcp",
+          "transport": "tcp"
+        },
+        "metrics": {
+          "scheme": "tcp",
+          "protocol": "tcp",
+          "transport": "tcp"
+        }
+      }
+    },
+    "service-b": {
+      "type": "executable.v1",
+      "env": {
+        "OTEL_EXPORTER_OTLP_INSECURE": "true",
+        "OTEL_EXPORTER_OTLP_PROTOCOL": "grpc"
+      },
+      "bindings": {
+        "grpc": {
+          "scheme": "tcp",
+          "protocol": "tcp",
+          "transport": "tcp"
+        },
+        "http": {
+          "scheme": "tcp",
+          "protocol": "tcp",
+          "transport": "tcp"
+        },
+        "metrics": {
+          "scheme": "tcp",
+          "protocol": "tcp",
+          "transport": "tcp"
+        }
+      }
+    }
+  }
+}

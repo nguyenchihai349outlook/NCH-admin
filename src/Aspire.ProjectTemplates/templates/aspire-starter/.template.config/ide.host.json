@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/ide.host",
+  "displayOverviewPage": "0",
+  "unsupportedHosts": [
+    {
+      "id": "vs",
+      "version": "(,17.9)"
+    }
+  ],
+  "requiredComponents": [
+    {
+      "hostId": "vs",
+      "componentType": "setupComponent",
+      "id": "Web"
+    }
+  ],
+  "symbolInfo": [
+    {
+      "id": "UseRedisCache",
+      "isVisible": true,
+      "persistenceScope": "templateGroup"
+    }
+  ]
+}
