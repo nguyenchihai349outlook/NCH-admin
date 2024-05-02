@@ -1,0 +1,54 @@
+﻿@using Aspire.Dashboard.Model
+@using Aspire.Dashboard.Resources
+@namespace Aspire.Dashboard.Components
+@inject IStringLocalizer<Columns> Loc
+
+@{
+    List<DisplayedEndpoint> displayedEndpoints;
+    string? additionalMessage = null;
+    if (Resource.Endpoints.Length == 0 && (Resource.State == ResourceStates.FinishedState || Resource.ExpectedEndpointsCount == 0))
+    {
+        if (Resource.Services.Length == 0)
+        {
+            // If we have no endpoints, and the app isn't running anymore or we're not expecting any, then just say None
+            additionalMessage = Loc[nameof(Columns.EndpointsColumnDisplayNone)];
+            displayedEndpoints = [];
+        }
+        else
+        {
+            displayedEndpoints = GetEndpoints(Resource);
+        }
+    }
+    else if (Resource.State != ResourceStates.FinishedState
+        && (Resource.ExpectedEndpointsCount is null || Resource.ExpectedEndpointsCount > Resource.Endpoints.Length))
+    {
+        // If we're expecting more endpoints, say Starting..., unless the app isn't running anymore.
+        // Don't include service only endpoints in the list until finished loading endpoints.
+        displayedEndpoints = GetEndpoints(Resource, excludeServices: true);
+        additionalMessage = Loc[nameof(Columns.EndpointsColumnDisplayPlaceholder)];
+    }
+    else
+    {
+        displayedEndpoints = GetEndpoints(Resource);
+    }
+}
+
+<ul class="endpoint-list">
+    @foreach (var displayedEndpoint in displayedEndpoints)
+    {
+        <li>
+            @if (displayedEndpoint.Url != null)
+            {
+                <a href="@displayedEndpoint.Url" target="_blank">@displayedEndpoint.Url</a>
+            }
+            else
+            {
+                @displayedEndpoint.Text
+            }
+        </li>
+    }
+    @if (!string.IsNullOrEmpty(additionalMessage))
+    {
+        <li>@additionalMessage</li>
+    }
+</ul>
