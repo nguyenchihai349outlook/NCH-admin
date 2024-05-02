@@ -1,0 +1,270 @@
+{
+  "resources": {
+    "postgres": {
+      "type": "azure.bicep.v0",
+      "path": "postgres-containerapp.bicep",
+      "params": {
+        "postgres_password_value": "{postgres-password.value}",
+        "containerAppEnv_outputs_id": "{containerAppEnv.outputs.id}"
+      }
+    },
+    "catalogdb": {
+      "type": "value.v0",
+      "connectionString": "{postgres.connectionString};Database=catalogdb"
+    },
+    "basketcache": {
+      "type": "azure.bicep.v0",
+      "path": "basketcache-containerapp.bicep",
+      "params": {
+        "containerAppEnv_outputs_id": "{containerAppEnv.outputs.id}"
+      }
+    },
+    "catalogservice": {
+      "type": "project.v0",
+      "path": "../CatalogService/CatalogService.csproj",
+      "env": {
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EXCEPTION_LOG_ATTRIBUTES": "true",
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EVENT_LOG_ATTRIBUTES": "true",
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_RETRY": "in_memory",
+        "ASPNETCORE_FORWARDEDHEADERS_ENABLED": "true",
+        "ConnectionStrings__catalogdb": "{catalogdb.connectionString}"
+      },
+      "bindings": {
+        "http": {
+          "scheme": "http",
+          "protocol": "tcp",
+          "transport": "http"
+        },
+        "https": {
+          "scheme": "https",
+          "protocol": "tcp",
+          "transport": "http"
+        }
+      }
+    },
+    "rabbitmq-password": {
+      "type": "parameter.v0",
+      "value": "{rabbitmq-password.inputs.value}",
+      "inputs": {
+        "value": {
+          "type": "string",
+          "secret": true
+        }
+      }
+    },
+    "messaging": {
+      "type": "azure.bicep.v0",
+      "path": "messaging-containerapp.bicep",
+      "params": {
+        "messaging_password_value": "{messaging-password.value}",
+        "containerAppEnv_outputs_id": "{containerAppEnv.outputs.id}"
+      }
+    },
+    "basketservice": {
+      "type": "project.v0",
+      "path": "../BasketService/BasketService.csproj",
+      "env": {
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EXCEPTION_LOG_ATTRIBUTES": "true",
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EVENT_LOG_ATTRIBUTES": "true",
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_RETRY": "in_memory",
+        "ASPNETCORE_FORWARDEDHEADERS_ENABLED": "true",
+        "ConnectionStrings__basketcache": "{basketcache.connectionString}",
+        "ConnectionStrings__messaging": "{messaging.connectionString}"
+      },
+      "bindings": {
+        "http": {
+          "scheme": "http",
+          "protocol": "tcp",
+          "transport": "http2"
+        },
+        "https": {
+          "scheme": "https",
+          "protocol": "tcp",
+          "transport": "http2"
+        }
+      }
+    },
+    "frontend": {
+      "type": "project.v0",
+      "path": "../MyFrontend/MyFrontend.csproj",
+      "env": {
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EXCEPTION_LOG_ATTRIBUTES": "true",
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EVENT_LOG_ATTRIBUTES": "true",
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_RETRY": "in_memory",
+        "ASPNETCORE_FORWARDEDHEADERS_ENABLED": "true",
+        "services__basketservice__http__0": "{basketservice.bindings.http.url}",
+        "services__basketservice__https__0": "{basketservice.bindings.https.url}",
+        "services__catalogservice__http__0": "{catalogservice.bindings.http.url}",
+        "services__catalogservice__https__0": "{catalogservice.bindings.https.url}"
+      },
+      "bindings": {
+        "http": {
+          "scheme": "http",
+          "protocol": "tcp",
+          "transport": "http",
+          "external": true
+        },
+        "https": {
+          "scheme": "https",
+          "protocol": "tcp",
+          "transport": "http",
+          "external": true
+        }
+      }
+    },
+    "orderprocessor": {
+      "type": "project.v0",
+      "path": "../OrderProcessor/OrderProcessor.csproj",
+      "env": {
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EXCEPTION_LOG_ATTRIBUTES": "true",
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EVENT_LOG_ATTRIBUTES": "true",
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_RETRY": "in_memory",
+        "ConnectionStrings__messaging": "{messaging.connectionString}"
+      }
+    },
+    "apigateway": {
+      "type": "project.v0",
+      "path": "../ApiGateway/ApiGateway.csproj",
+      "env": {
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EXCEPTION_LOG_ATTRIBUTES": "true",
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EVENT_LOG_ATTRIBUTES": "true",
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_RETRY": "in_memory",
+        "ASPNETCORE_FORWARDEDHEADERS_ENABLED": "true",
+        "services__basketservice__http__0": "{basketservice.bindings.http.url}",
+        "services__basketservice__https__0": "{basketservice.bindings.https.url}",
+        "services__catalogservice__http__0": "{catalogservice.bindings.http.url}",
+        "services__catalogservice__https__0": "{catalogservice.bindings.https.url}"
+      },
+      "bindings": {
+        "http": {
+          "scheme": "http",
+          "protocol": "tcp",
+          "transport": "http"
+        },
+        "https": {
+          "scheme": "https",
+          "protocol": "tcp",
+          "transport": "http"
+        }
+      }
+    },
+    "catalogdbapp": {
+      "type": "project.v0",
+      "path": "../CatalogDb/CatalogDb.csproj",
+      "env": {
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EXCEPTION_LOG_ATTRIBUTES": "true",
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EVENT_LOG_ATTRIBUTES": "true",
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_RETRY": "in_memory",
+        "ASPNETCORE_FORWARDEDHEADERS_ENABLED": "true",
+        "ConnectionStrings__catalogdb": "{catalogdb.connectionString}"
+      },
+      "bindings": {
+        "http": {
+          "scheme": "http",
+          "protocol": "tcp",
+          "transport": "http"
+        },
+        "https": {
+          "scheme": "https",
+          "protocol": "tcp",
+          "transport": "http"
+        }
+      }
+    },
+    "containerAppEnv": {
+      "type": "azure.bicep.v0",
+      "path": "containerappenv.bicep"
+    },
+    "containerRegistry": {
+      "type": "azure.bicep.v0",
+      "path": "containerregistry.bicep"
+    },
+    "default-identity": {
+      "type": "azure.bicep.v0",
+      "path": "default-identity.bicep"
+    },
+    "catalogservice-containerApp": {
+      "type": "azure.bicep.v0",
+      "path": "catalogservice-containerapp.bicep",
+      "params": {
+        "postgres_password_value": "{postgres-password.value}",
+        "containerAppEnv_outputs_id": "{containerAppEnv.outputs.id}",
+        "containerRegistry_outputs_loginServer": "{containerRegistry.outputs.loginServer}",
+        "containerRegistry_outputs_mid": "{containerRegistry.outputs.mid}",
+        "catalogservice_containerImage": "{catalogservice.containerImage}"
+      }
+    },
+    "basketservice-containerApp": {
+      "type": "azure.bicep.v0",
+      "path": "basketservice-containerapp.bicep",
+      "params": {
+        "messaging_password_value": "{messaging-password.value}",
+        "containerAppEnv_outputs_id": "{containerAppEnv.outputs.id}",
+        "containerRegistry_outputs_loginServer": "{containerRegistry.outputs.loginServer}",
+        "containerRegistry_outputs_mid": "{containerRegistry.outputs.mid}",
+        "basketservice_containerImage": "{basketservice.containerImage}"
+      }
+    },
+    "frontend-containerApp": {
+      "type": "azure.bicep.v0",
+      "path": "frontend-containerapp.bicep",
+      "params": {
+        "containerAppEnv_outputs_id": "{containerAppEnv.outputs.id}",
+        "containerRegistry_outputs_loginServer": "{containerRegistry.outputs.loginServer}",
+        "containerRegistry_outputs_mid": "{containerRegistry.outputs.mid}",
+        "frontend_containerImage": "{frontend.containerImage}"
+      }
+    },
+    "orderprocessor-containerApp": {
+      "type": "azure.bicep.v0",
+      "path": "orderprocessor-containerapp.bicep",
+      "params": {
+        "messaging_password_value": "{messaging-password.value}",
+        "containerAppEnv_outputs_id": "{containerAppEnv.outputs.id}",
+        "containerRegistry_outputs_loginServer": "{containerRegistry.outputs.loginServer}",
+        "containerRegistry_outputs_mid": "{containerRegistry.outputs.mid}",
+        "orderprocessor_containerImage": "{orderprocessor.containerImage}"
+      }
+    },
+    "apigateway-containerApp": {
+      "type": "azure.bicep.v0",
+      "path": "apigateway-containerapp.bicep",
+      "params": {
+        "containerAppEnv_outputs_id": "{containerAppEnv.outputs.id}",
+        "containerRegistry_outputs_loginServer": "{containerRegistry.outputs.loginServer}",
+        "containerRegistry_outputs_mid": "{containerRegistry.outputs.mid}",
+        "apigateway_containerImage": "{apigateway.containerImage}"
+      }
+    },
+    "catalogdbapp-containerApp": {
+      "type": "azure.bicep.v0",
+      "path": "catalogdbapp-containerapp.bicep",
+      "params": {
+        "postgres_password_value": "{postgres-password.value}",
+        "containerAppEnv_outputs_id": "{containerAppEnv.outputs.id}",
+        "containerRegistry_outputs_loginServer": "{containerRegistry.outputs.loginServer}",
+        "containerRegistry_outputs_mid": "{containerRegistry.outputs.mid}",
+        "catalogdbapp_containerImage": "{catalogdbapp.containerImage}"
+      }
+    },
+    "app": {
+      "type": "azure.bicep.v0",
+      "path": "app.bicep"
+    },
+    "postgres-password": {
+      "type": "parameter.v0",
+      "value": "{postgres-password.inputs.value}",
+      "inputs": {
+        "value": {
+          "type": "string",
+          "secret": true,
+          "default": {
+            "generate": {
+              "minLength": 22
+            }
+          }
+        }
+      }
+    }
+  }
+}
