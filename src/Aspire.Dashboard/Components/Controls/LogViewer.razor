@@ -1,0 +1,13 @@
+﻿@namespace Aspire.Dashboard.Components
+@using System.Text
+@using Aspire.Dashboard.ConsoleLogs
+@using Aspire.Dashboard.Model
+@using System.Collections.Concurrent
+@inject IJSRuntime JS
+@implements IAsyncDisposable
+
+<div class="log-overflow">
+    <div class="log-container" id="logContainer">
+        
+    </div>
+</div>
