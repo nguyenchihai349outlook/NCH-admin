@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en" target-language="ru" original="../ConsoleLogs.resx">
+    <body>
+      <trans-unit id="ConsoleLogsFailedToInitialize">
+        <source>Failed to initialize</source>
+        <target state="translated">Не удалось выполнить инициализацию</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ConsoleLogsFinishedWatchingLogs">
+        <source>Finished watching logs</source>
+        <target state="translated">Просмотр журналов завершен</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ConsoleLogsHeader">
+        <source>Console logs</source>
+        <target state="translated">Журналы консоли</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ConsoleLogsInitializingLogViewer">
+        <source>Initializing log viewer...</source>
+        <target state="translated">Инициализируется средство просмотра журналов...</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ConsoleLogsLoadingResources">
+        <source>Loading resources ...</source>
+        <target state="translated">Производится загрузка ресурсов...</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ConsoleLogsLogsNotYetAvailable">
+        <source>Logs not yet available</source>
+        <target state="translated">Журналы пока недоступны</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ConsoleLogsNoResourceSelected">
+        <source>No resource selected</source>
+        <target state="translated">Нет выбранных ресурсов</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ConsoleLogsPageTitle">
+        <source>{0} console logs</source>
+        <target state="translated">Журналов консоли: {0}</target>
+        <note>{0} is an application name</note>
+      </trans-unit>
+      <trans-unit id="ConsoleLogsUnknownState">
+        <source>Unknown state</source>
+        <target state="translated">Неизвестное состояние</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ConsoleLogsWatchingLogs">
+        <source>Watching logs...</source>
+        <target state="translated">Просмотр журналов...</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="LogStatusLabel">
+        <source>Service log status</source>
+        <target state="translated">Состояние журнала службы</target>
+        <note />
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
