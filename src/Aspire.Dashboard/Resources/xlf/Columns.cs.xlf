@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en" target-language="cs" original="../Columns.resx">
+    <body>
+      <trans-unit id="EndpointsColumnDisplayNone">
+        <source>None</source>
+        <target state="translated">Žádné</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="EndpointsColumnDisplayPlaceholder">
+        <source>Starting...</source>
+        <target state="translated">Spouštění…</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="LogMessageColumnExceptionDetailsTitle">
+        <source>Exception details</source>
+        <target state="translated">Podrobnosti o výjimce</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourceNameDisplayContainerIdText">
+        <source>Container ID: {0}</source>
+        <target state="translated">ID kontejneru: {0}</target>
+        <note>{0} is an alphanumeric id</note>
+      </trans-unit>
+      <trans-unit id="ResourceNameDisplayCopyContainerIdText">
+        <source>Copy container ID to clipboard</source>
+        <target state="translated">Zkopírovat ID kontejneru do schránky</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourceNameDisplayProcessIdText">
+        <source>Process ID: {0}</source>
+        <target state="translated">ID procesu: {0}</target>
+        <note>{0} is a numeric id</note>
+      </trans-unit>
+      <trans-unit id="SourceColumnDisplayContainerArgsTitle">
+        <source>Container args</source>
+        <target state="translated">Argumenty kontejneru</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="SourceColumnDisplayContainerCommand">
+        <source>Command: {0}</source>
+        <target state="translated">Příkaz: {0}</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="SourceColumnDisplayContainerCommandTitle">
+        <source>Container command</source>
+        <target state="translated">Příkaz kontejneru</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="SourceColumnDisplayCopyCommandToClipboard">
+        <source>Copy full command to clipboard</source>
+        <target state="translated">Zkopírovat celý příkaz do schránky</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="SourceColumnDisplayPort">
+        <source>Port: {0}</source>
+        <target state="translated">Port: {0}</target>
+        <note>{0} is a port number</note>
+      </trans-unit>
+      <trans-unit id="SourceColumnDisplayPorts">
+        <source>Ports: {0}</source>
+        <target state="translated">Porty: {0}</target>
+        <note>{0} is a list of ports</note>
+      </trans-unit>
+      <trans-unit id="SourceColumnDisplayWorkingDirectory">
+        <source>Working directory: {0}</source>
+        <target state="translated">Pracovní adresář: {0}</target>
+        <note>{0} is a path</note>
+      </trans-unit>
+      <trans-unit id="SourceColumnSourceCopyContainerToClipboard">
+        <source>Copy image name and tag to clipboard</source>
+        <target state="translated">Zkopírovat název a značku image do schránky</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="SourceColumnSourceCopyFullPathToClipboard">
+        <source>Copy file path to clipboard</source>
+        <target state="translated">Zkopírovat cestu k souboru do schránky</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="StateColumnResourceExited">
+        <source>{0} is no longer running</source>
+        <target state="translated">{0} už neběží.</target>
+        <note>{0} is a resource type</note>
+      </trans-unit>
+      <trans-unit id="StateColumnResourceExitedUnexpectedly">
+        <source>{0} exited unexpectedly with exit code {1}</source>
+        <target state="translated">Prostředek {0} byl neočekávaně ukončen s ukončovacím kódem {1}.</target>
+        <note>{0} is a resource type, {1} is a number</note>
+      </trans-unit>
+      <trans-unit id="UnreadLogErrorsBadgeErrorLogs">
+        <source>{0} error logs</source>
+        <target state="translated">Počet protokolů chyb: {0}</target>
+        <note>{0} is a number</note>
+      </trans-unit>
+      <trans-unit id="UnreadLogErrorsBadgeOneErrorLog">
+        <source>1 error log</source>
+        <target state="translated">1 protokol chyb</target>
+        <note />
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
