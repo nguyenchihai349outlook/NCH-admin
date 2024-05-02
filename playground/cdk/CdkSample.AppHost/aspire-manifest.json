@@ -1,0 +1,30 @@
+{
+  "resources": {
+    "cosmos": {
+      "type": "azure.bicep.v0",
+      "connectionString": "{cosmos.secretOutputs.connectionString}",
+      "path": "cosmos.module.bicep",
+      "params": {
+        "keyVaultName": ""
+      }
+    },
+    "storagesku": {
+      "type": "parameter.v0",
+      "value": "{storagesku.inputs.value}",
+      "inputs": {
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "locationOverride": {
+      "type": "parameter.v0",
+      "value": "{locationOverride.inputs.value}",
+      "inputs": {
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "storage": {
+      "type": "azure.bicep.v0"

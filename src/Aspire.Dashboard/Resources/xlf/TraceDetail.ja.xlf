@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en" target-language="ja" original="../TraceDetail.resx">
+    <body>
+      <trans-unit id="TraceDetailDepthHeader">
+        <source>Depth</source>
+        <target state="translated">深さ</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="TraceDetailDurationHeader">
+        <source>Duration</source>
+        <target state="translated">期間</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="TraceDetailPageTitle">
+        <source>{0} trace</source>
+        <target state="needs-review-translation">{0} のトレース</target>
+        <note>{0} is an application name</note>
+      </trans-unit>
+      <trans-unit id="TraceDetailResourcesHeader">
+        <source>Resources</source>
+        <target state="translated">リソース</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="TraceDetailTotalSpansHeader">
+        <source>Total spans</source>
+        <target state="translated">合計範囲</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="TraceDetailTraceNotFound">
+        <source>Trace "{0}" not found</source>
+        <target state="translated">トレース "{0}" が見つかりません</target>
+        <note>{0} is an identifier</note>
+      </trans-unit>
+      <trans-unit id="TraceDetailTraceStartHeader">
+        <source>Trace detail</source>
+        <target state="translated">トレースの詳細</target>
+        <note />
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
