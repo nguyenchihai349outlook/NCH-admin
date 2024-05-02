@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en" target-language="fr" original="../Layout.resx">
+    <body>
+      <trans-unit id="MainLayoutAspire">
+        <source>.NET Aspire</source>
+        <target state="translated">.NET Aspire</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MainLayoutAspireDashboardHelpLink">
+        <source>Help</source>
+        <target state="translated">Aide</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MainLayoutAspireRepoLink">
+        <source>.NET Aspire repo</source>
+        <target state="translated">Référentiel .NET Aspire</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MainLayoutLaunchSettings">
+        <source>Launch settings</source>
+        <target state="translated">Paramètres de lancement</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MainLayoutSettingsDialogClose">
+        <source>Close</source>
+        <target state="translated">Fermer</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MainLayoutSettingsDialogTitle">
+        <source>Settings</source>
+        <target state="translated">Paramètres</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MainLayoutUnhandledErrorMessage">
+        <source>An unhandled error has occurred.</source>
+        <target state="translated">Une erreur non traitée s’est produite.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MainLayoutUnhandledErrorReload">
+        <source>Reload</source>
+        <target state="translated">Recharger</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MessageTelemetryBody">
+        <source>Untrusted apps can send telemetry to the dashboard.</source>
+        <target state="translated">Les applications non approuvées peuvent envoyer des données de télémétrie au tableau de bord.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MessageTelemetryLink">
+        <source>More information</source>
+        <target state="translated">Informations supplémentaires</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MessageTelemetryTitle">
+        <source>Telemetry endpoint is unsecured</source>
+        <target state="translated">Le point de terminaison de télémétrie n’est pas sécurisé</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="NavMenuConsoleLogsTab">
+        <source>Console</source>
+        <target state="translated">Console</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="NavMenuMetricsTab">
+        <source>Metrics</source>
+        <target state="translated">Métriques</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="NavMenuMonitoringTab">
+        <source>Monitoring</source>
+        <target state="translated">Surveillance</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="NavMenuResourcesTab">
+        <source>Resources</source>
+        <target state="translated">Ressources</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="NavMenuStructuredLogsTab">
+        <source>Structured</source>
+        <target state="translated">Structuré</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="NavMenuTracesTab">
+        <source>Traces</source>
+        <target state="translated">Traces</target>
+        <note />
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
