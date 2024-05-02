@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en" target-language="ja" original="../Resources.resx">
+    <body>
+      <trans-unit id="ResourceCommandFailed">
+        <source>"{0}" command failed</source>
+        <target state="translated">"{0}" コマンドが失敗しました</target>
+        <note>{0} is the display name of the command that failed</note>
+      </trans-unit>
+      <trans-unit id="ResourceCommandSuccess">
+        <source>"{0}" command succeeded</source>
+        <target state="translated">"{0}" コマンドが成功しました</target>
+        <note>{0} is the display name of the command that succeeded</note>
+      </trans-unit>
+      <trans-unit id="ResourceCommandToastViewLogs">
+        <source>View Logs</source>
+        <target state="translated">ログの表示</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourceDetailsEndpointUrl">
+        <source>Endpoint URL</source>
+        <target state="translated">エンドポイント URL</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourceDetailsProxyUrl">
+        <source>Proxy URL</source>
+        <target state="translated">プロキシ URL</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesCommandsColumnHeader">
+        <source>Commands</source>
+        <target state="translated">コマンド</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesDetailsColumnHeader">
+        <source>Details</source>
+        <target state="translated">詳細</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesDetailsContainerArgumentsProperty">
+        <source>Container arguments</source>
+        <target state="translated">コンテナー引数</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesDetailsContainerCommandProperty">
+        <source>Container command</source>
+        <target state="translated">コンテナー コマンド</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesDetailsContainerIdProperty">
+        <source>Container ID</source>
+        <target state="translated">コンテナー ID</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesDetailsContainerImageProperty">
+        <source>Container image</source>
+        <target state="translated">コンテナー イメージ</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesDetailsContainerPortsProperty">
+        <source>Container ports</source>
+        <target state="translated">コンテナー ポート</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesDetailsDisplayNameProperty">
+        <source>Display name</source>
+        <target state="translated">表示名</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesDetailsExecutableArgumentsProperty">
+        <source>Executable arguments</source>
+        <target state="translated">実行可能な引数</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesDetailsExecutablePathProperty">
+        <source>Executable path</source>
+        <target state="translated">実行可能ファイルのパス</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesDetailsExecutableProcessIdProperty">
+        <source>Process ID</source>
+        <target state="translated">プロセス ID</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesDetailsExecutableWorkingDirectoryProperty">
+        <source>Working directory</source>
+        <target state="translated">作業ディレクトリ</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesDetailsExitCodeProperty">
+        <source>Exit code</source>
+        <target state="translated">終了コード</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesDetailsProjectPathProperty">
+        <source>Project path</source>
+        <target state="translated">プロジェクト パス</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesDetailsStartTimeProperty">
+        <source>Start time</source>
+        <target state="translated">開始時刻</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesDetailsStateProperty">
+        <source>State</source>
+        <target state="translated">状態</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesEndpointsColumnHeader">
+        <source>Endpoints</source>
+        <target state="translated">エンドポイント</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesEnvironmentColumnHeader">
+        <source>Environment</source>
+        <target state="translated">環境</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesLogsColumnHeader">
+        <source>Logs</source>
+        <target state="translated">ログ</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesSourceColumnHeader">
+        <source>Source</source>
+        <target state="translated">ソース</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesStartTimeColumnHeader">
+        <source>Start time</source>
+        <target state="translated">開始時刻</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesStateColumnHeader">
+        <source>State</source>
+        <target state="translated">状態</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesEnvironmentVariablesHeader">
+        <source>Environment variables for {0}</source>
+        <target state="translated">{0} の環境変数</target>
+        <note>{0} is a resource</note>
+      </trans-unit>
+      <trans-unit id="ResourcesHeader">
+        <source>Resources</source>
+        <target state="translated">リソース</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesNoEnvironmentVariables">
+        <source>No environment variables</source>
+        <target state="translated">環境変数はありません</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesNoResources">
+        <source>No resources found</source>
+        <target state="translated">リソースが見つかりません</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesPageTitle">
+        <source>{0} resources</source>
+        <target state="translated">{0} のリソース</target>
+        <note>{0} is an application name</note>
+      </trans-unit>
+      <trans-unit id="ResourcesResourceTypesHeader">
+        <source>Resource types</source>
+        <target state="translated">リソースの種類</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesTypeColumnHeader">
+        <source>Type</source>
+        <target state="translated">種類</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesTypeFilterAllVisible">
+        <source>Type filter: All types visible</source>
+        <target state="translated">型フィルター: すべての型が表示されます</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesTypeFiltered">
+        <source>Type filter: Filtered</source>
+        <target state="translated">型フィルター: フィルター処理済み</target>
+        <note />
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
