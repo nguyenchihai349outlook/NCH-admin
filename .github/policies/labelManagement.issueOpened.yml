@@ -1,0 +1,17 @@
+id: labelManagement.issueOpened
+name: New Issues
+description: Adds CodeFlow link to new PRs
+owner:
+resource: repository
+disabled: false
+where:
+configuration:
+  resourceManagementConfiguration:
+    eventResponderTasks:
+      - description: Add CodeFlow link to new PRs
+        if:
+          - payloadType: Pull_Request
+          - isAction:
+              action: Opened
+        then:
+          - addCodeFlowLink
