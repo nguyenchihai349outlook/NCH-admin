@@ -1,0 +1,154 @@
+ fluent-toolbar fluent-switch,
+fluent-toolbar p {
+    margin-inline-end: 15px;
+}
+
+fluent-toolbar[orientation=horizontal] {
+    width: 100%;
+}
+
+/* Hide any web components that haven't been */
+:not(:defined),
+.before-upgrade {
+    visibility: hidden;
+}
+
+.col-long-content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 100%;
+}
+
+.trace-tag-icon {
+    margin-right: 3px;
+}
+
+:root {
+    --log-critical: #F8ECEB;
+    --log-error: #F8ECEB;
+    --log-warning: #FBF3DD;
+    --badge-fill-error: var(--error);
+    --badge-color-error: var(--foreground-on-accent-rest);
+}
+
+[data-theme="dark"] {
+    --log-critical: #493634;
+    --log-error: #493634;
+    --log-warning: #3F3A2B;
+}
+
+.page-content-area {
+    /*
+        Height of the browser - static height for other content
+        TODO: Is there a better way to do this?
+    */
+    height: calc(100vh - 175px);
+    width: 100%;
+}
+
+.datagrid-overflow-area {
+    /*
+        Height of the browser - static height for other content
+        TODO: Is there a better way to do this?
+    */
+    height: 100%;
+    min-width: 100%;
+    overflow: auto;
+}
+
+.datagrid-overflow-area .empty-content {
+    width: 100%;
+    height: 100px;
+}
+
+.custom-body-content {
+    margin-right: 10px;
+}
+
+/* The fluent dialog's default fill color is too dark in our current dark theme.
+   Setting it to the floating layer allows it to stand out more and doesn't impact light theme. */
+fluent-dialog::part(control) {
+    background: var(--neutral-layer-floating);
+}
+
+fluent-dialog fluent-toolbar {
+    background-color: var(--neutral-layer-floating);
+}
+
+/* Changing the dialog's fill color means stealth buttons on the dialog have the wrong background,
+   so change it to match */
+fluent-dialog fluent-button[appearance=stealth]:not(:hover)::part(control),
+fluent-dialog fluent-button[appearance=lightweight]:not(:hover)::part(control),
+fluent-dialog fluent-anchor[appearance=stealth]:not(:hover)::part(control),
+fluent-dialog fluent-anchor[appearance=lightweight]:not(:hover)::part(control) {
+    background: var(--neutral-layer-floating);
+}
+
+/* But changing the stealth button's background in dialogs means the stealth buttons used as headers for grid cells
+   now have the wrong background. So change that back */
+fluent-dialog fluent-data-grid-cell[cell-type=columnheader] fluent-button[appearance=stealth]:not(:hover)::part(control) {
+    background: var(--fill-layer);
+}
+
+.dialog-grid-container {
+    width: 1000px;
+    height: 500px;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.dialog-grid-container .empty-content {
+    width: 100%;
+    height: 46px;
+}
+
+.dialog-grid-container h4 {
+    margin: 0.75rem;
+}
+
+.content-layout-with-toolbar {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "toolbar"
+        "main";
+    padding: calc(var(--design-unit) * 2px);
+}
+
+.content-layout-with-toolbar > fluent-toolbar {
+    grid-area: toolbar;
+}
+
+.content-layout-with-toolbar > .datagrid-overflow-area {
+    grid-area: main;
+}
+
+.span-id {
+    color: rgb(136, 136, 136);
+    padding-left: 0.5rem;
+    font-size: 12px;
+}
+
+fluent-data-grid-row {
+    align-items: center;
+}
+
+fluent-data-grid-cell .long-inner-content {
+    width: inherit;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.resource-state-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.resource-error-badge {
+    padding: 0 3px;
+    cursor: pointer;
+}

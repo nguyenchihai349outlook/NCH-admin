@@ -1,0 +1,51 @@
+.trace-id {
+    color: rgb(136, 136, 136);
+    padding-left: 0.5rem;
+    font-size: 12px;
+}
+
+.trace-tag {
+    display: flex;
+    align-items: center;
+    border: 1px solid rgb(217, 217, 217);
+    padding: 2px 7px;
+    margin-right: 7px;
+    font-size: 12px;
+    background-color: var(--neutral-fill-rest);
+    color: var(--neutral-foreground-rest);
+}
+
+.trace-service-tag {
+    border-left-width: 15px;
+}
+
+::deep.traces-layout {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    height: 100%;
+    width: 100%;
+    grid-template-areas:
+        "head"
+        "toolbar"
+        "main"
+        "foot";
+    gap: calc(var(--design-unit) * 2px);
+    padding: calc(var(--design-unit) * 2px);
+}
+
+::deep.traces-layout > h1 {
+    grid-area: head;
+    padding: calc(var(--design-unit) * 1px);
+}
+
+::deep.traces-layout > fluent-toolbar {
+    grid-area: toolbar;
+}
+
+::deep.traces-layout > .datagrid-overflow-area {
+    grid-area: main;
+}
+
+::deep.traces-layout > .total-items-footer {
+    grid-area: foot;
+}
