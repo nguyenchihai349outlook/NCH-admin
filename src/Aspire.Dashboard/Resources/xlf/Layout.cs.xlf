@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en" target-language="cs" original="../Layout.resx">
+    <body>
+      <trans-unit id="MainLayoutAspire">
+        <source>.NET Aspire</source>
+        <target state="translated">.NET Aspire</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MainLayoutAspireDashboardHelpLink">
+        <source>Help</source>
+        <target state="translated">Nápověda</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MainLayoutAspireRepoLink">
+        <source>.NET Aspire repo</source>
+        <target state="translated">Úložiště .NET Aspire</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MainLayoutLaunchSettings">
+        <source>Launch settings</source>
+        <target state="translated">Nastavení pro spuštění</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MainLayoutSettingsDialogClose">
+        <source>Close</source>
+        <target state="translated">Zavřít</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MainLayoutSettingsDialogTitle">
+        <source>Settings</source>
+        <target state="translated">Nastavení</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MainLayoutUnhandledErrorMessage">
+        <source>An unhandled error has occurred.</source>
+        <target state="translated">Došlo k neošetřené chybě.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="MainLayoutUnhandledErrorReload">
+        <source>Reload</source>
+        <target state="translated">Načíst znovu</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="NavMenuConsoleLogsTab">
+        <source>Console</source>
+        <target state="translated">Konzola</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="NavMenuMetricsTab">
+        <source>Metrics</source>
+        <target state="translated">Metriky</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="NavMenuMonitoringTab">
+        <source>Monitoring</source>
+        <target state="translated">Monitorování</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="NavMenuResourcesTab">
+        <source>Resources</source>
+        <target state="translated">Prostředky</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="NavMenuStructuredLogsTab">
+        <source>Structured</source>
+        <target state="translated">Strukturované</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="NavMenuTracesTab">
+        <source>Traces</source>
+        <target state="translated">Trasování</target>
+        <note />
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
