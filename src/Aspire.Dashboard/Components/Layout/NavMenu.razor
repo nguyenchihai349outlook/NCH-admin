@@ -1,0 +1,34 @@
+﻿@using Aspire.Dashboard.Model
+@using Aspire.Dashboard.Resources
+@using Aspire.Dashboard.Utils
+@inject IStringLocalizer<Layout> Loc
+@inject IDashboardClient DashboardClient
+
+<AspireAppBar>
+    @if (DashboardClient.IsEnabled)
+    {
+        <AspireAppBarItem
+            Href="@DashboardUrls.ResourcesUrl()"
+            Match="NavLinkMatch.All"
+            Icon="ResourcesIcon()"
+            SecondaryIcon="ResourcesIcon(secondary: true)"
+            Text="@Loc[nameof(Layout.NavMenuResourcesTab)]" />
+    <AspireAppBarItem Href="@DashboardUrls.ConsoleLogsUrl()"
+            Icon="ConsoleLogsIcon()"
+            SecondaryIcon="ConsoleLogsIcon(secondary: true)"
+            Text="@Loc[nameof(Layout.NavMenuConsoleLogsTab)]" />
+    }
+    <AspireAppBarItem Href="@DashboardUrls.StructuredLogsUrl()"
+        Icon="StructuredLogsIcon()"
+        SecondaryIcon="StructuredLogsIcon(secondary: true)"
+        Text="@Loc[nameof(Layout.NavMenuStructuredLogsTab)]" />
+    <AspireAppBarItem Href="@DashboardUrls.TracesUrl()"
+        Icon="TracesIcon()"
+        SecondaryIcon="TracesIcon(secondary: true)"
+        Text="@Loc[nameof(Layout.NavMenuTracesTab)]" />
+    <AspireAppBarItem
+        Href="@DashboardUrls.MetricsUrl()"
+        Icon="MetricsIcon()"
+        SecondaryIcon="MetricsIcon(secondary: true)"
+        Text="@Loc[nameof(Layout.NavMenuMetricsTab)]" />
+</AspireAppBar>
