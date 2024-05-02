@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en" target-language="es" original="../Resources.resx">
+    <body>
+      <trans-unit id="ResourceCommandFailed">
+        <source>"{0}" command failed</source>
+        <target state="translated">Error del comando "{0}"</target>
+        <note>{0} is the display name of the command that failed</note>
+      </trans-unit>
+      <trans-unit id="ResourceCommandSuccess">
+        <source>"{0}" command succeeded</source>
+        <target state="translated">El comando "{0}" se ejecutó correctamente</target>
+        <note>{0} is the display name of the command that succeeded</note>
+      </trans-unit>
+      <trans-unit id="ResourceCommandToastViewLogs">
+        <source>View Logs</source>
+        <target state="translated">Ver registros</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourceDetailsEndpointUrl">
+        <source>Endpoint URL</source>
+        <target state="translated">Dirección URL del punto de conexión</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourceDetailsProxyUrl">
+        <source>Proxy URL</source>
+        <target state="translated">URL del proxy</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesCommandsColumnHeader">
+        <source>Commands</source>
+        <target state="translated">Comandos</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesDetailsColumnHeader">
+        <source>Details</source>
+        <target state="translated">Detalles</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesDetailsContainerArgumentsProperty">
+        <source>Container arguments</source>
+        <target state="translated">Argumentos de contenedor</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesDetailsContainerCommandProperty">
+        <source>Container command</source>
+        <target state="translated">Comando de contenedor</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesDetailsContainerIdProperty">
+        <source>Container ID</source>
+        <target state="translated">Id. de contenedor</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesDetailsContainerImageProperty">
+        <source>Container image</source>
+        <target state="translated">Imagen de contenedor</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesDetailsContainerPortsProperty">
+        <source>Container ports</source>
+        <target state="translated">Puertos de contenedor</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesDetailsDisplayNameProperty">
+        <source>Display name</source>
+        <target state="translated">Nombre para mostrar</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesDetailsExecutableArgumentsProperty">
+        <source>Executable arguments</source>
+        <target state="translated">Argumentos ejecutables</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesDetailsExecutablePathProperty">
+        <source>Executable path</source>
+        <target state="translated">Ruta de acceso ejecutable</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesDetailsExecutableProcessIdProperty">
+        <source>Process ID</source>
+        <target state="translated">Id. del proceso</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesDetailsExecutableWorkingDirectoryProperty">
+        <source>Working directory</source>
+        <target state="translated">Directorio de trabajo</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesDetailsExitCodeProperty">
+        <source>Exit code</source>
+        <target state="translated">Código de salida</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesDetailsProjectPathProperty">
+        <source>Project path</source>
+        <target state="translated">Ruta de acceso del proyecto</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesDetailsStartTimeProperty">
+        <source>Start time</source>
+        <target state="translated">Hora de inicio</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesDetailsStateProperty">
+        <source>State</source>
+        <target state="translated">Estado</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesEndpointsColumnHeader">
+        <source>Endpoints</source>
+        <target state="translated">Puntos de conexión</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesEnvironmentColumnHeader">
+        <source>Environment</source>
+        <target state="translated">Entorno</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesLogsColumnHeader">
+        <source>Logs</source>
+        <target state="translated">Registros</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesSourceColumnHeader">
+        <source>Source</source>
+        <target state="translated">Origen</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesStartTimeColumnHeader">
+        <source>Start time</source>
+        <target state="translated">Hora de inicio</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesStateColumnHeader">
+        <source>State</source>
+        <target state="translated">Estado</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesEnvironmentVariablesHeader">
+        <source>Environment variables for {0}</source>
+        <target state="translated">Variables de entorno para {0}</target>
+        <note>{0} is a resource</note>
+      </trans-unit>
+      <trans-unit id="ResourcesHeader">
+        <source>Resources</source>
+        <target state="translated">Recursos</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesNoEnvironmentVariables">
+        <source>No environment variables</source>
+        <target state="translated">No hay variables de entorno.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesNoResources">
+        <source>No resources found</source>
+        <target state="translated">No se encontraron recursos</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesPageTitle">
+        <source>{0} resources</source>
+        <target state="translated">{0} recursos</target>
+        <note>{0} is an application name</note>
+      </trans-unit>
+      <trans-unit id="ResourcesResourceTypesHeader">
+        <source>Resource types</source>
+        <target state="translated">Tipos de recursos</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesTypeColumnHeader">
+        <source>Type</source>
+        <target state="translated">Tipo</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesTypeFilterAllVisible">
+        <source>Type filter: All types visible</source>
+        <target state="translated">Filtro de tipo: todos los tipos visibles</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ResourcesTypeFiltered">
+        <source>Type filter: Filtered</source>
+        <target state="translated">Filtro de tipo: filtrado</target>
+        <note />
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
