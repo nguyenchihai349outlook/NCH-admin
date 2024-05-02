@@ -1,0 +1,92 @@
+﻿@page "/Metrics"
+@page "/Metrics/{applicationInstanceId}"
+@page "/Metrics/{applicationInstanceId}/Meter/{meterName}"
+@page "/Metrics/{applicationInstanceId}/Meter/{meterName}/Instrument/{instrumentName}"
+
+@using Aspire.Dashboard.Model.Otlp
+@using Aspire.Dashboard.Resources
+@inject IStringLocalizer<Dashboard.Resources.Metrics> Loc
+@inject IStringLocalizer<ControlsStrings> ControlsStringsLoc
+
+<PageTitle>@string.Format(Loc[nameof(Dashboard.Resources.Metrics.MetricsPageTitle)], ResourceService.ApplicationName)</PageTitle>
+
+<div class="metrics-layout">
+    <h1 class="page-header">@Loc[nameof(Dashboard.Resources.Metrics.MetricsHeader)]</h1>
+    <FluentToolbar Orientation="Orientation.Horizontal">
+        <FluentSelect TOption="SelectViewModel<string>"
+                      Items="@_applications"
+                      OptionText="@(c => c.Name)"
+                      @bind-SelectedOption="ViewModel.SelectedApplication"
+                      @bind-SelectedOption:after="HandleSelectedApplicationChangedAsync"
+                      AriaLabel="@ControlsStringsLoc[nameof(ControlsStrings.SelectAnApplication)]"/>
+        <FluentIcon slot="end" Icon="Icons.Regular.Size20.Clock" Style="margin-right:5px;" />
+        <FluentSelect slot="end" TOption="SelectViewModel<TimeSpan>"
+                      Items="@_durations"
+                      OptionText="@(c => c.Name)"
+                      @bind-SelectedOption="ViewModel.SelectedDuration"
+                      @bind-SelectedOption:after="HandleSelectedDurationChangedAsync"
+                      AriaLabel="@Loc[nameof(Dashboard.Resources.Metrics.MetricsSelectADuration)]"/>
+    </FluentToolbar>
+    <div class="page-content-area">
+        @if (ViewModel.Instruments?.Count > 0)
+        {
+            <FluentSplitter Style="height:100%" Panel1Size="2fr" Panel2Size="8fr">
+                <Panel1>
+                    <FluentTreeView Class="metrics-tree" @bind-CurrentSelected="ViewModel.SelectedTreeItem" @bind-CurrentSelected:after="HandleSelectedTreeItemChangedAsync">
+                        <ChildContent>
+                            @foreach (var meterGroup in ViewModel.Instruments.GroupBy(i => i.Parent).OrderBy(g => g.Key.MeterName))
+                            {
+                                <FluentTreeItem @key="meterGroup.Key" Text="@meterGroup.Key.MeterName" Data="@meterGroup.Key" title="@meterGroup.Key.MeterName" InitiallyExpanded="true" InitiallySelected="@(ViewModel.SelectedInstrument == null && meterGroup.Key.MeterName == ViewModel.SelectedMeter?.MeterName)">
+                                    @foreach (var instrument in meterGroup.OrderBy(i => i.Name))
+                                    {
+                                        <FluentTreeItem @key="instrument" Class="nested" Text="@instrument.Name" Data="@instrument" title="@instrument.Name" InitiallySelected="@(instrument.Name == ViewModel.SelectedInstrument?.Name && instrument.Parent.MeterName == ViewModel.SelectedMeter?.MeterName)" />
+                                    }
+                                </FluentTreeItem>
+                            }
+                        </ChildContent>
+                    </FluentTreeView>
+                </Panel1>
+                <Panel2>
+                    <div class="metrics-content">
+                        @if (ViewModel.SelectedApplication.Id != null && ViewModel.SelectedMeter != null && ViewModel.SelectedInstrument != null)
+                        {
+                            <ChartContainer ApplicationId="@(ViewModel.SelectedApplication.Id)" MeterName="@(ViewModel.SelectedMeter.MeterName)" InstrumentName="@(ViewModel.SelectedInstrument.Name)" Duration="ViewModel.SelectedDuration.Id" />
+                        }
+                        else if (ViewModel.SelectedMeter != null)
+                        {
+                            <h3>@ViewModel.SelectedMeter.MeterName</h3>
+                            <table style="max-width:1100px;">
+                                @foreach (var item in ViewModel.Instruments.Where(i => i.Parent == ViewModel.SelectedMeter).OrderBy(i => i.Name))
+                                {
+                                    <tr>
+                                        <td>
+                                            <FluentAnchor Href="@($"/Metrics/{ViewModel.SelectedApplication.Id}/Meter/{item.Parent.MeterName}/Instrument/{item.Name}")" Appearance="Appearance.Lightweight">@item.Name</FluentAnchor>
+                                        </td>
+                                        <td>@item.Description</td>
+                                    </tr>
+                                }
+
+                            </table>
+                        }
+                        else
+                        {
+                            <p>@Loc[nameof(Dashboard.Resources.Metrics.MetricsSelectInstrument)]</p>
+                        }
+                    </div>
+                </Panel2>
+            </FluentSplitter>
+        }
+        else if (ViewModel.Instruments == null)
+        {
+            <div class="empty-content">
+                <FluentIcon Icon="Icons.Regular.Size24.ChartMultiple" />&nbsp;@Loc[nameof(Dashboard.Resources.Metrics.MetricsSelectAResource)]
+            </div>
+        }
+        else
+        {
+            <div class="empty-content">
+                <FluentIcon Icon="Icons.Regular.Size24.ChartMultiple" />&nbsp;@Loc[nameof(Dashboard.Resources.Metrics.MetricsNoMetricsForResource)]
+            </div>
+        }
+    </div>
+</div>
