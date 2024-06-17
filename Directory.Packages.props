@@ -135,7 +135,7 @@
     <PackageVersion Include="Microsoft.DotNet.Build.Tasks.Installers" Version="8.0.0-beta.23564.4" />
     <PackageVersion Include="System.CommandLine" Version="2.0.0-beta4.24209.3" />
     <!-- unit test dependencies -->
-    <PackageVersion Include="bUnit" Version="1.27.17" />
+    <PackageVersion Include="bUnit" Version="1.28.9" />
     <PackageVersion Include="JsonSchema.Net" Version="6.0.7" />
     <PackageVersion Include="Microsoft.DotNet.RemoteExecutor" Version="$(MicrosoftDotNetRemoteExecutorPackageVersion)" />
     <PackageVersion Include="Microsoft.DotNet.XUnitExtensions" Version="$(MicrosoftDotNetXUnitExtensionsPackageVersion)" />
